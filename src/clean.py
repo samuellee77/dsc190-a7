@@ -29,6 +29,7 @@ def main():
 
     # Drop rows with non-positive duration_seconds
     df = df[df["duration_seconds"] > 0]
+    df["duration_seconds"] = df["duration_seconds"].astype(int)
 
     # Normalize timestamps — parse flexibly, output ISO 8601
     df["timestamp"] = pd.to_datetime(df["timestamp"], format='mixed')
