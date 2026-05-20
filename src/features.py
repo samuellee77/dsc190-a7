@@ -1,6 +1,8 @@
+import os
 import pandas as pd
 
 def main():
+    os.makedirs("data/features", exist_ok=True)
     df = pd.read_csv("data/transformed/events.csv")
 
     df["duration_minutes"] = df["duration_seconds"] / 60

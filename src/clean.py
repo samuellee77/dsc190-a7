@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 
 VALID_EVENT_TYPES = {"click", "view", "purchase"}
@@ -17,6 +18,7 @@ def parse_timestamp(ts):
     return None
 
 def main():
+    os.makedirs("data/clean", exist_ok=True)
     df = pd.read_csv("data/raw/events.csv")
 
     # Drop rows with any missing fields

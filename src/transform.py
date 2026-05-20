@@ -1,6 +1,8 @@
+import os
 import pandas as pd
 
 def main():
+    os.makedirs("data/transformed", exist_ok=True)
     df = pd.read_csv("data/clean/events.csv")
 
     # Extract date portion from ISO 8601 timestamp
